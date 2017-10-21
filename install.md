@@ -1,4 +1,4 @@
-## solr安装步骤（kelen 2017-10-20）
+## solr安装步骤（kelen 2017-10-20 周六）
 
 * 1.1.准备工作
 
@@ -8,9 +8,9 @@
 
   ​
 
-  ###  下载地址：https://mirrors.tuna.tsinghua.edu.cn/apache/lucene/solr/7.1.0/
+  ###  下载地址：https://mirrors.tuna.tsinghua.edu.cn/apache/lucene/solr/7.1.0/*
 
-  2.在jetty服务器下运行
+  ###  2.在jetty服务器下运行
 
   solr解压之后目录结构如下:
   这里写图片描述
@@ -24,19 +24,17 @@
 
   ##### 初步成功（2017-10-20周五）
 
-  3.在tomcat服务器下运行
+  * 3.在tomcat服务器下运行（最终实现的）
 
-  为了加入自己的特性，以及在solr基础之上的应用，solr也可运行在tomcat服务器下，具体配置过程如下：
-  1. 将solr-6.2.1\server\solr-webapp下的webapp文件夹拷贝到tomcat\webapps目录下，并将webapp重命名为solr（可以重命名为取任意名称）。
-  2. 将solr-6.2.1\server\lib\ext下的所有jar包拷贝到tomcat\webapps\solr\WEB-INF\lib下
-     3.在WEB-INF下创建一个classses文件夹，并将solr-6.2.1\server\resources下的log4j.properties配置文件拷贝到classes文件夹下
-     4.在tomcat\webapps\solr下创建文件夹solrhome(可任意取名)，将solr-6.2.1\server\solr下的所有内容拷贝到solrhome下面，此时tomcat\webapps\solr和tomcat\webapps\solr\solrhome文件夹目录结构如图
-     这里写图片描述
+  参考博客：http://blog.csdn.net/kaiwen666/article/details/78068837
 
+  4.运行tomcat，访问http://localhost:8080/solr/index.html 即可
   这里写图片描述
 
-  5.修改tomcat\webapps\solr\WEB-INF\web.xml,找到图示代码进行修改（第40行左右，默认注释掉了）
-  这里写图片描述
+* 5.在后台点击Core Admin菜单，如果没有Core，会弹出如下框，提示添加new_core。
 
-  6.运行tomcat，访问http://localhost:8080/solr/index.html 即可
-  这里写图片描述
+* 6.点击documents，增加json类型的数据
+
+* 7.实现浏览器的搜索
+
+* 8.java进行Demo，add和update
